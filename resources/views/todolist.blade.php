@@ -24,7 +24,7 @@
                     <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="createBtn" onclick="addTodo()">新增</button>
                 </form>
             </div>
-           
+
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table class="table-fixed">
@@ -43,7 +43,7 @@
                             <tr>
                                 <td>{{ $task->title }}</td>
                                 <td>{{ $task->description }}</td>
-                                <td class="text-center">{{ $task->completed ? '完成' : '未完成' }}</td>
+                                <td class="text-center @if ( $task->completed ) text-green-700 @else text-gray-400 @endif">{{ $task->completed ? '完成' : '未完成' }}</td>
                                 <td>
                                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="updateStatusBtn"
                                             onclick="updateStatus('{{ $task->id }}', '{{ $task->completed }}')">
